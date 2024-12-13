@@ -2,15 +2,16 @@ const container = document.getElementById("container");
 
 // Creates 16x6 grid
 
-setGrid(16, 16);
+const defaultSize = 16;
 
-function setGrid(rows, columns) {
-  for (i = 0; i < rows; i++) {
+setGrid(defaultSize);
+
+function setGrid(size) {
+  for (i = 0; i < size; i++) {
     const row = document.createElement("div"); // Create a row
     row.classList.add("row");
-    console.log(rows)
     container.appendChild(row);
-    for (k = 0; k < columns; k++) {
+    for (k = 0; k < size; k++) {
       // Add 16 squares into the row
       const square = document.createElement("div");
       square.classList.add("square");
