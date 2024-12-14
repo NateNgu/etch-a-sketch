@@ -22,6 +22,19 @@ function setGrid(size) {
 
 sizeButton = document.getElementById("sizeButton");
 
+sizeButton.addEventListener("click", function () {
+  let inputSize = prompt(
+    "Enter in a grid size.\nThe number must be greater than 9 but no more than 100.\n(e.g. entering in 10 will set the grid to 10x10)"
+  );
+  if (inputSize > 100 || inputSize < 10) {
+    alert("Invalid number, please try again.")
+  } else {
+    container.innerHTML = ""; // Remove default grid
+    setGrid(inputSize);
+  }
+  
+});
+
 // Create hover effect
 
 const square = document.getElementsByClassName("square");
