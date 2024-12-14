@@ -18,6 +18,13 @@ function setGrid(size) {
       row.appendChild(square);
     }
   }
+  const square = document.getElementsByClassName("square");
+
+  for (i = 0; i < square.length; i++) {
+    square[i].addEventListener("mouseenter", function () {
+      this.style.backgroundColor = "gray";
+    });
+  }
 }
 
 sizeButton = document.getElementById("sizeButton");
@@ -27,20 +34,9 @@ sizeButton.addEventListener("click", function () {
     "Enter in a grid size.\nThe number must be greater than 9 but no more than 100.\n(e.g. entering in 10 will set the grid to 10x10)"
   );
   if (inputSize > 100 || inputSize < 10) {
-    alert("Invalid number, please try again.")
+    alert("Invalid number, please try again.");
   } else {
     container.innerHTML = ""; // Remove default grid
     setGrid(inputSize);
   }
-  
 });
-
-// Create hover effect
-
-const square = document.getElementsByClassName("square");
-
-for (i = 0; i < square.length; i++) {
-  square[i].addEventListener("mouseover", function () {
-    this.style.backgroundColor = "gray";
-  });
-}
